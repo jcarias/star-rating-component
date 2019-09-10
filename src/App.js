@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import StarRating from "./components/StarRating";
 
 function App() {
+  const [stars, setStars] = useState(3);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +13,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{`Current rating: ${stars}`}</p>
+        <div>
+          <StarRating totalStars={5} handleSelection={setStars} />
+        </div>
       </header>
     </div>
   );
