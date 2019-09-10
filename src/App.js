@@ -4,7 +4,7 @@ import "./App.css";
 import StarRating from "./components/StarRating";
 
 function App() {
-  const [stars, setStars] = useState(3);
+  const [stars, setStars] = useState(0);
 
   return (
     <div className="App">
@@ -14,8 +14,8 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>{`Current rating: ${stars}`}</p>
-        <div>
-          <StarRating totalStars={5} handleSelection={setStars} />
+        <div style={{ color: "gold" }}>
+          <StarRating totalStars={3} handleSelection={setStars} value={stars} />
         </div>
       </header>
     </div>
